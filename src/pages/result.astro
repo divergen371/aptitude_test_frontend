@@ -1,0 +1,36 @@
+---
+const url = new URL(Astro.request.url);
+const searchParams = url.searchParams;
+const score = parseInt(searchParams.get("score") || "0", 10);
+let result;
+
+// スコアに基づく結果判定
+if (score === 100) {
+  result = "フロントエンド";
+} else if (score === 0) {
+  result = "バックエンド";
+} else if (score === 50) {
+  result = "どちらにも適性があります";
+} else {
+  result = "適性が判定できません";
+}
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>診断結果</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col items-center justify-center">
+      <h1 class="text-3xl font-bold mb-6">診断結果</h1>
+      <p class="text-lg">あなたは<strong>{result}</strong>に適性があります。</p>
+      <a
+        href="/"
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >ホームに戻る</a
+      >
+    </div>
+  </body>
+</html>
