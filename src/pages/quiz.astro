@@ -8,322 +8,370 @@
     <title>適性診断クイズ</title>
     <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
-  <body class="bg-gray-100">
-    <div class="min-h-screen flex flex-col items-center justify-center">
-      <h1 class="text-2xl font-bold mb-4">質問に答えてください</h1>
-      <form
-        id="quiz-form"
-        class="w-full max-w-lg bg-white p-8 rounded shadow-md"
-      >
+  <body class="bg-gray-100 text-gray-900">
+    <div
+      class="min-h-screen flex flex-col items-center justify-center dark:text-darkText dark:bg-darkBg"
+    >
+      <!-- ライトモード/ダークモード切り替えボタン -->
+      <!-- トグルスイッチ -->
+      <div class="flex justify-end w-full max-w-2xl p-4">
+        <label
+          for="theme-toggle"
+          class="inline-flex relative items-center cursor-pointer"
+        >
+          <input type="checkbox" id="theme-toggle" class="sr-only peer" />
+          <div
+            class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-darkAccent rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-darkAccent"
+          >
+          </div>
+          <span
+            class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >ライト / ダーク</span
+          >
+        </label>
+      </div>
+
+      <h1 class="text-3xl font-bold mb-6">適性診断クイズ</h1>
+      <form id="quiz-form" class="w-full max-w-2xl space-y-6">
         <!-- 質問1 -->
-        <div class="question mb-6">
-          <p>1. 視覚的なデザインにどの程度の興味がありますか？</p>
-          <label
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
+            1. 視覚的なデザインにどの程度の興味がありますか？
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q1" value="frontend" /> 非常に興味がある</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q1" value="frontend" /> 少し興味がある</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q1" value="backend" /> あまり興味がない</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q1" value="backend" /> 全く興味がない</label
           >
         </div>
 
         <!-- 質問2 -->
-        <div class="question mb-6">
-          <p>2. 複雑なアルゴリズムやデータ構造の設計に興味がありますか？</p>
-          <label
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
+            2. 複雑なアルゴリズムやデータ構造の設計に興味がありますか？
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q2" value="backend" /> 非常に興味がある</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q2" value="backend" /> 少し興味がある</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q2" value="frontend" /> あまり興味がない</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q2" value="frontend" /> 全く興味がない</label
           >
         </div>
 
         <!-- 質問3 -->
-        <div class="question mb-6">
-          <p>
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
             3.
             新しいフレームワークやライブラリを使ってUIを構築することにどの程度の満足感を感じますか？
-          </p>
-          <label
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q3" value="frontend" /> 非常に満足感を感じる</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q3" value="frontend" /> 少し満足感を感じる</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q3" value="backend" /> あまり満足感を感じない</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q3" value="backend" /> 全く満足感を感じない</label
           >
         </div>
 
         <!-- 質問4 -->
-        <div class="question mb-6">
-          <p>
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
             4. 問題が発生したとき、どのように解決に取り組むことが多いですか？
-          </p>
-          <label
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q4" value="backend" /> まず、全体の構造を把握し、部分的に分割して解決する</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q4" value="frontend" /> まず、目に見える部分を調整して解決を図る</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q4" value="backend" /> 全体を見渡してから、部分に焦点を当てる</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q4" value="frontend" /> 小さな部分から手を付け、全体を見渡すのは後から</label
           >
         </div>
 
         <!-- 質問5 -->
-        <div class="question mb-6">
-          <p>
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
             5.
             複雑なシステムを設計する際に、ドキュメントや設計図を作成することにどの程度の重要性を感じますか？
-          </p>
-          <label
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q5" value="backend" /> 非常に重要だと感じる</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q5" value="backend" /> 少し重要だと感じる</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q5" value="frontend" /> あまり重要だと感じない</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q5" value="frontend" /> 全く重要だと感じない</label
           >
         </div>
 
         <!-- 質問6 -->
-        <div class="question mb-6">
-          <p>6. 直感や感覚に頼ってデザインを進めることが多いですか？</p>
-          <label
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
+            6. 直感や感覚に頼ってデザインを進めることが多いですか？
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q6" value="frontend" /> 非常に多い</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q6" value="frontend" /> 少し多い</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q6" value="backend" /> あまり多くない</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q6" value="backend" /> 全く多くない</label
           >
         </div>
 
         <!-- 質問7 -->
-        <div class="question mb-6">
-          <p>
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
             7.
             チームで働く際に、他のメンバーと共同でデザインや仕様を練り上げることをどの程度楽しみますか？
-          </p>
-          <label
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q7" value="frontend" /> 非常に楽しむ</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q7" value="frontend" /> 少し楽しむ</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q7" value="backend" /> あまり楽しんでいない</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q7" value="backend" /> 全く楽しんでいない</label
           >
         </div>
 
         <!-- 質問8 -->
-        <div class="question mb-6">
-          <p>
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
             8.
             コードのパフォーマンスや効率性を最適化することにどの程度の満足感を感じますか？
-          </p>
-          <label
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q8" value="backend" /> 非常に満足感を感じる</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q8" value="backend" /> 少し満足感を感じる</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q8" value="frontend" /> あまり満足感を感じない</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q8" value="frontend" /> 全く満足感を感じない</label
           >
         </div>
 
         <!-- 質問9 -->
-        <div class="question mb-6">
-          <p>9. デバッグ作業にどの程度の満足感を感じますか？</p>
-          <label
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
+            9. デバッグ作業にどの程度の満足感を感じますか？
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q9" value="backend" /> 非常に満足感を感じる</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q9" value="backend" /> 少し満足感を感じる</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q9" value="frontend" /> あまり満足感を感じない</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q9" value="frontend" /> 全く満足感を感じない</label
           >
         </div>
 
         <!-- 質問10 -->
-        <div class="question mb-6">
-          <p>
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
             10.
             ユーザーインターフェースの微細な部分の調整にどの程度の満足感を感じますか？
-          </p>
-          <label
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q10" value="frontend" /> 非常に満足感を感じる</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q10" value="frontend" /> 少し満足感を感じる</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q10" value="backend" /> あまり満足感を感じない</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q10" value="backend" /> 全く満足感を感じない</label
           >
         </div>
 
         <!-- 質問11 -->
-        <div class="question mb-6">
-          <p>
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
             11.
             新しい技術スタックやツールを学ぶことにどの程度の興味がありますか？
-          </p>
-          <label
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q11" value="frontend" /> 非常に興味がある</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q11" value="frontend" /> 少し興味がある</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q11" value="backend" /> あまり興味がない</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q11" value="backend" /> 全く興味がない</label
           >
         </div>
 
         <!-- 質問12 -->
-        <div class="question mb-6">
-          <p>
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
             12. データベースの設計や最適化に対してどの程度の関心がありますか？
-          </p>
-          <label
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q12" value="backend" /> 非常に関心がある</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q12" value="backend" /> 少し関心がある</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q12" value="frontend" /> あまり関心がない</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q12" value="frontend" /> 全く関心がない</label
           >
         </div>
 
         <!-- 質問13 -->
-        <div class="question mb-6">
-          <p>
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
             13. パフォーマンスやセキュリティに対する意識はどの程度ありますか？
-          </p>
-          <label
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q13" value="backend" /> 非常に意識している</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q13" value="backend" /> 少し意識している</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q13" value="frontend" /> あまり意識していない</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q13" value="frontend" /> 全く意識していない</label
           >
         </div>
 
         <!-- 質問14 -->
-        <div class="question mb-6">
-          <p>
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
             14.
             UX（ユーザー体験）デザインの理論や原則に対する理解を深めたいと思いますか？
-          </p>
-          <label
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q14" value="frontend" /> 非常に深めたい</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q14" value="frontend" /> 少し深めたい</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q14" value="backend" /> あまり深めたくない</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q14" value="backend" /> 全く興味がない</label
           >
         </div>
 
         <!-- 質問15 -->
-        <div class="question mb-6">
-          <p>
+        <div class="bg-white dark:bg-darkCardBg shadow-md rounded-lg p-6">
+          <h2 class="text-xl font-semibold mb-4">
             15.
             チームメンバーのコードレビューやフィードバックをどの程度重視しますか？
-          </p>
-          <label
+          </h2>
+          <label class="block mb-2"
             ><input type="radio" name="q15" value="backend" /> 非常に重視している</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q15" value="backend" /> 少し重視している</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q15" value="frontend" /> あまり重視していない</label
-          ><br />
-          <label
+          >
+          <label class="block mb-2"
             ><input type="radio" name="q15" value="frontend" /> 全く重視していない</label
           >
         </div>
 
-        <button
-          type="submit"
-          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-          >結果を見る</button
-        >
+        <!-- 提出ボタン -->
+        <div class="text-center">
+          <button
+            type="submit"
+            class="bg-blue-500 dark:bg-darkAccent text-white px-4 py-2 rounded hover:bg-blue-600 dark:hover:bg-darkBorder"
+            >結果を見る</button
+          >
+        </div>
       </form>
     </div>
+
     <script>
       document
         .getElementById("quiz-form")
         ?.addEventListener("submit", async (event) => {
           event.preventDefault();
-          const form = event.target as HTMLFormElement
-          const formData = new FormData(form);
+          const formData = new FormData(event.target as HTMLFormElement);
+          const json = JSON.stringify(Object.fromEntries(formData));
+
           const response = await fetch("http://localhost:3000/api/calculate", {
             method: "POST",
-            body: JSON.stringify(Object.fromEntries(formData)),
+            body: json,
             headers: {
               "Content-Type": "application/json",
             },
           });
+
           const result = await response.json();
           window.location.href = `/result?score=${result.score}`;
         });
+
+      const themeToggleBtn = document.getElementById("theme-toggle");
+      const body = document.body;
+
+      // 現在のテーマをlocalStorageから取得
+      const currentTheme = localStorage.getItem("theme");
+      if (currentTheme) {
+        body.classList.add(currentTheme);
+      }
+
+      // ボタンのクリックイベントでテーマを切り替える
+      themeToggleBtn?.addEventListener("click", () => {
+        body.classList.toggle("dark");
+        const newTheme = body.classList.contains("dark") ? "dark" : "light";
+        localStorage.setItem("theme", newTheme);
+      });
     </script>
   </body>
 </html>
